@@ -31,46 +31,49 @@ class UploadDataStep2VC: UIViewController {
     }
 
     @IBAction func uploadDataBtnTapped(_ sender: UIButton) {
-        sender.isEnabled = false
-        self.uploadErrorMsgLbl.isHidden = true
-        activityIndicator.startAnimating()
-        let code = codeInputView.text
+//        sender.isEnabled = false
+//        self.uploadErrorMsgLbl.isHidden = true
+//        activityIndicator.startAnimating()
+//        let code = codeInputView.text
+//
+//        functions.httpsCallable("getUploadToken").call(code) { [unowned self] (result, error) in
+//            if let error = error as NSError? {
+//                sender.isEnabled = true
+//                self.activityIndicator.stopAnimating()
+//                self.uploadErrorMsgLbl.text = self.uploadFailErrMsg
+//
+//                if error.domain == FunctionsErrorDomain {
+//                    let code = FunctionsErrorCode(rawValue: error.code)
+//                    let message = error.localizedDescription
+//                    let details = error.userInfo[FunctionsErrorDetailsKey]
+//
+//                    Logger.DLog("Cloud Function Error - [\(String(describing: code))][\(message)][\(String(describing: details))]")
+//                }
+//
+//                Logger.DLog("Error - \(error)")
+//            }
+//
+//            if let token = (result?.data as? [String: Any])?["token"] as? String {
+//                self.uploadFile(token: token) { success in
+//                    if success {
+//                        self.performSegue(withIdentifier: "showSuccessVCSegue", sender: nil)
+//                    } else {
+//                        self.uploadErrorMsgLbl.isHidden = false
+//                        self.uploadErrorMsgLbl.text = self.uploadFailErrMsg
+//                        sender.isEnabled = true
+//                        self.activityIndicator.stopAnimating()
+//                    }
+//                }
+//            } else {
+//                self.uploadErrorMsgLbl.isHidden = false
+//                self.uploadErrorMsgLbl.text = self.invalidPinErrMsg
+//                sender.isEnabled = true
+//                self.activityIndicator.stopAnimating()
+//            }
+//        }
+        
+        self.performSegue(withIdentifier: "showSuccessVCSegue", sender: nil)
 
-        functions.httpsCallable("getUploadToken").call(code) { [unowned self] (result, error) in
-            if let error = error as NSError? {
-                sender.isEnabled = true
-                self.activityIndicator.stopAnimating()
-                self.uploadErrorMsgLbl.text = self.uploadFailErrMsg
-
-                if error.domain == FunctionsErrorDomain {
-                    let code = FunctionsErrorCode(rawValue: error.code)
-                    let message = error.localizedDescription
-                    let details = error.userInfo[FunctionsErrorDetailsKey]
-
-                    Logger.DLog("Cloud Function Error - [\(String(describing: code))][\(message)][\(String(describing: details))]")
-                }
-
-                Logger.DLog("Error - \(error)")
-            }
-
-            if let token = (result?.data as? [String: Any])?["token"] as? String {
-                self.uploadFile(token: token) { success in
-                    if success {
-                        self.performSegue(withIdentifier: "showSuccessVCSegue", sender: nil)
-                    } else {
-                        self.uploadErrorMsgLbl.isHidden = false
-                        self.uploadErrorMsgLbl.text = self.uploadFailErrMsg
-                        sender.isEnabled = true
-                        self.activityIndicator.stopAnimating()
-                    }
-                }
-            } else {
-                self.uploadErrorMsgLbl.isHidden = false
-                self.uploadErrorMsgLbl.text = self.invalidPinErrMsg
-                sender.isEnabled = true
-                self.activityIndicator.stopAnimating()
-            }
-        }
     }
 
     func uploadFile(token: String, _ result: @escaping (Bool) -> Void) {

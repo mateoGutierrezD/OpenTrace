@@ -45,21 +45,21 @@ class PhoneNumberViewController: UIViewController, UITextFieldDelegate {
 
     func verifyPhoneNumberAndProceed(_ mobileNumber: String) {
         activityIndicator.startAnimating()
-        PhoneAuthProvider.provider().verifyPhoneNumber(mobileNumber, uiDelegate: nil) { [weak self] (verificationID, error) in
-            if let error = error {
-                let errorAlert = UIAlertController(title: "Error verifying phone number", message: error.localizedDescription, preferredStyle: .alert)
-                errorAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                    NSLog("Unable to verify phone number")
-                }))
-                self?.present(errorAlert, animated: true)
-                Logger.DLog("Phone number verification error: \(error.localizedDescription)")
-                return
-            }
-            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-            UserDefaults.standard.set(mobileNumber, forKey: "mobileNumber")
-            self?.performSegue(withIdentifier: "segueFromNumberToOTP", sender: self)
-            self?.activityIndicator.stopAnimating()
-        }
+//        PhoneAuthProvider.provider().verifyPhoneNumber(mobileNumber, uiDelegate: nil) { [weak self] (verificationID, error) in
+//            if let error = error {
+//                let errorAlert = UIAlertController(title: "Error verifying phone number", message: error.localizedDescription, preferredStyle: .alert)
+//                errorAlert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+//                    NSLog("Unable to verify phone number")
+//                }))
+//                self?.present(errorAlert, animated: true)
+//                Logger.DLog("Phone number verification error: \(error.localizedDescription)")
+//                return
+//            }
+//            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+//            UserDefaults.standard.set(mobileNumber, forKey: "mobileNumber")
+        self.performSegue(withIdentifier: "segueFromNumberToOTP", sender: self)
+            self.activityIndicator.stopAnimating()
+        //}
     }
 
     //  limit text field input to 15 characters

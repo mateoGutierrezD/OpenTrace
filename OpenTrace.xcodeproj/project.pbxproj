@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		056EC00B24957E4B00B4BEBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 056EC00A24957E4B00B4BEBA /* GoogleService-Info.plist */; };
 		30BE1CAA23F108BA005DCE4F /* UploadFileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE1CA923F108BA005DCE4F /* UploadFileData.swift */; };
 		30BE1CAD23F119FD005DCE4F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30BE1CAC23F119FD005DCE4F /* Localizable.strings */; };
 		30BE1CAF23F1349F005DCE4F /* EncounterRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE1CAE23F1349F005DCE4F /* EncounterRecord.swift */; };
@@ -78,6 +79,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		056EC00A24957E4B00B4BEBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "STG/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		056EC00C2495816A00B4BEBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30BE1CA923F108BA005DCE4F /* UploadFileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadFileData.swift; sourceTree = "<group>"; };
 		30BE1CAC23F119FD005DCE4F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		30BE1CAE23F1349F005DCE4F /* EncounterRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterRecord.swift; sourceTree = "<group>"; };
@@ -467,6 +470,7 @@
 		D885238D24260B2F00E4E4AC /* PROD */ = {
 			isa = PBXGroup;
 			children = (
+				056EC00C2495816A00B4BEBA /* GoogleService-Info.plist */,
 			);
 			path = PROD;
 			sourceTree = "<group>";
@@ -474,6 +478,7 @@
 		D885238F24260B2F00E4E4AC /* STG */ = {
 			isa = PBXGroup;
 			children = (
+				056EC00A24957E4B00B4BEBA /* GoogleService-Info.plist */,
 			);
 			path = STG;
 			sourceTree = "<group>";
@@ -555,6 +560,7 @@
 				5D7DC344243E5789007180E9 /* Muli-ExtraLightItalic.ttf in Resources */,
 				5D7DC33D243E5789007180E9 /* Muli-ExtraLight.ttf in Resources */,
 				5D7DC343243E5789007180E9 /* Muli-Regular.ttf in Resources */,
+				056EC00B24957E4B00B4BEBA /* GoogleService-Info.plist in Resources */,
 				5D7DC342243E5789007180E9 /* Muli-LightItalic.ttf in Resources */,
 				5DD41D4223DCB03B00FD4AB0 /* Main.storyboard in Resources */,
 				7785BB05240E09C700802EBC /* ActivityIndicator.json in Resources */,
@@ -879,14 +885,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3C5E7E594E7634084F94F030 /* Pods-OpenTrace.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_IDENTIFIER = "<insert bundle identifier here>";
+				BUNDLE_IDENTIFIER = co.sura.opentrace;
 				CLOUDFUNCTIONS_REGION = "asia-east2";
 				CODE_SIGN_ENTITLEMENTS = "OpenTrace/Project Bluetrace.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = 4CYF853X55;
-				FIREBASE_STORAGE_URL = "<insert firebase storage url here>";
+				DEVELOPMENT_TEAM = DA56BMC5EN;
+				FIREBASE_STORAGE_URL = "com.googleusercontent.apps.169507902267-t1c2bm1feot90v1krke9tt8reorts3qt";
 				INFOPLIST_FILE = "$(SRCROOT)/OpenTrace/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -896,7 +902,7 @@
 				MARKETING_VERSION = 1.5;
 				ONLY_ACTIVE_ARCH = YES;
 				OT_DISPLAY_NAME = "STG OpenTrace";
-				PRODUCT_BUNDLE_IDENTIFIER = "sg.gov.tech.opentrace-stg";
+				PRODUCT_BUNDLE_IDENTIFIER = co.sura.opentrace.stg;
 				PRODUCT_NAME = OpenTrace;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SERVICE_UUID = "A6BA4286-C550-4794-A888-9467EF0B31A8";
@@ -910,14 +916,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B9E9EDBFA7A442DC6067BF9 /* Pods-OpenTrace.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_IDENTIFIER = "<insert bundle identifier here>";
+				BUNDLE_IDENTIFIER = co.sura.opentrace;
 				CLOUDFUNCTIONS_REGION = "asia-east2";
 				CODE_SIGN_ENTITLEMENTS = "OpenTrace/Project Bluetrace.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = 4CYF853X55;
-				FIREBASE_STORAGE_URL = "<insert firebase storage url here>";
+				DEVELOPMENT_TEAM = DA56BMC5EN;
+				FIREBASE_STORAGE_URL = "com.googleusercontent.apps.169507902267-rta5hfs35s0e422e5irf57pklr5sc5n8";
 				INFOPLIST_FILE = "$(SRCROOT)/OpenTrace/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -926,7 +932,7 @@
 				);
 				MARKETING_VERSION = 1.5;
 				OT_DISPLAY_NAME = OpenTrace;
-				PRODUCT_BUNDLE_IDENTIFIER = sg.gov.tech.opentrace;
+				PRODUCT_BUNDLE_IDENTIFIER = co.sura.opentrace;
 				PRODUCT_NAME = OpenTrace;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SERVICE_UUID = "A6BA4286-C550-4794-A888-9467EF0B31A8";

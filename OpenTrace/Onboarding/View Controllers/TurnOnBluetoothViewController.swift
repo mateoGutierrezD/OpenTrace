@@ -13,13 +13,16 @@ class TurnOnBluetoothViewController: UIViewController {
         let blePoweredOn = BluetraceManager.shared.isBluetoothOn()
         let bleAuthorized = BluetraceManager.shared.isBluetoothAuthorized()
 
-        BlueTraceLocalNotifications.shared.checkAuthorization { (granted) in
-            if granted && blePoweredOn && bleAuthorized {
-                self.performSegue(withIdentifier: "showFullySetUpFromTurnOnBtSegue", sender: self)
-            } else {
-                self.performSegue(withIdentifier: "showHomeFromTurnOnBtSegue", sender: self)
-            }
-        }
+        self.performSegue(withIdentifier: "showFullySetUpFromTurnOnBtSegue", sender: self)
+
+        
+//        BlueTraceLocalNotifications.shared.checkAuthorization { (granted) in
+//            if granted && blePoweredOn && bleAuthorized {
+//                self.performSegue(withIdentifier: "showFullySetUpFromTurnOnBtSegue", sender: self)
+//            } else {
+//                self.performSegue(withIdentifier: "showHomeFromTurnOnBtSegue", sender: self)
+//            }
+//        }
     }
 
     override func viewDidLoad() {

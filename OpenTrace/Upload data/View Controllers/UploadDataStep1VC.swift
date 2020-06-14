@@ -26,7 +26,7 @@ class UploadDataStep1VC: UIViewController {
     }
 
     private func fetchedHandshakePin() {
-        nextBtn.isEnabled = false
+        nextBtn.isEnabled = true
         retryBtn.isHidden = true
         activityIndicator.startAnimating()
         FirebaseAPIs.getHandshakePin { (pin) in
